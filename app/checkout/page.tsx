@@ -4,14 +4,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartStore } from "@/store/cart-store";
 import { checkoutAction } from "./checkout-action";
 
-export default function CheckoutPage() {
+export default function checkoutPage() {
   const { items, removeItem, addItem } = useCartStore();
   const total = items.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+    (acc, item) => acc + item.price * item.quantity, 
+    0);
 
-  if (total === 0 || items.length === 0) {
+  if (total === 0 || items.length === 0 ) {
     return (
       <div className="container mx-auto px-4 py-8 text-center">
         {" "}
@@ -32,45 +31,28 @@ export default function CheckoutPage() {
               <li key={key} className="flex flex-col gap-2 border-b pb-2">
                 <div className="flex justify-between">
                   <span className="font-medium"> {item.name}</span>
-                  <span className="font-semi-bold">
-                    ₦{((item.price * item.quantity) / 100).toFixed(2)}
+                  <span className="font-semi-bold"> ₦{((item.price * item.quantity) / 100).toFixed(2)}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    -
-                  </Button>
+                  <Button  
+                  variant="outline"
+                  size="sm" 
+                  onClick={() => removeItem(item.id)}>-</Button>
 
-                  <span className="text-lg font-semibold">{item.quantity}</span>
+                    <span className="text-lg font-semibold">{item.quantity}</span>
 
-                  <Button
-                    className="bg-black text-white"
-                    onClick={() => addItem({ ...item, quantity: 1 })}
-                  >
-                    +
-                  </Button>
+                    <Button className="bg-black text-white" onClick={() => addItem( {...item, quantity: 1})}>+</Button>
                 </div>
               </li>
             ))}
           </ul>
-          <div className="mt-4 border-t pt-2 text-lg font-semibold">
-            Total: ₦{(total / 100).toFixed(2)}
-          </div>
+          <div className="mt-4 border-t pt-2 text-lg font-semibold" >Total: ₦{(total / 100).toFixed(2)}</div>
         </CardContent>
       </Card>
-      <form action={checkoutAction} className="max-w-md mx-auto">
+      <form action={checkoutAction}  className="max-w-md mx-auto">
         <input type="hidden" name="items" value={JSON.stringify(items)} />
-        <Button
-          className="bg-black text-white w-full"
-          type="submit"
-          variant={"default"}
-        >
-          Proceed to Payment
-        </Button>
+        <Button className="bg-black text-white w-full" type="submit" variant={"default"} >Proceed to Payment</Button>
       </form>
     </div>
   );

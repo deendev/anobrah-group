@@ -29,7 +29,7 @@ export const ProductDetails = ({ product }: Props) => {
     <div className="container mx-auto px-4 py-12 max-w-5xl">
       <Card className="flex flex-col md:flex-row gap-8 items-center p-6 md:p-10 rounded-2xl shadow-xl border border-gray-200">
         {product.images && product.images[0] && (
-          <div className="relative h-90 w-full md:w-1/2 rounded-xl overflow-hidden shadow-md">
+          <div className="relative h-90 w-full md:w-1/2 rounded-xl overflow-hidden ">
             <Image
               alt={product.name}
               src={product.images[0]}

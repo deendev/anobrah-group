@@ -37,7 +37,7 @@ export default async function Home() {
           <div className="flex justify-center">
             <Image
               alt="Hero Image"
-              className="rounded shadow-lg"
+              className="rounded-lg"
               width={450}
               height={450}
               src={products.data[0].images[0]}

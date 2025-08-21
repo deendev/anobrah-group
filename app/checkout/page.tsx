@@ -21,33 +21,33 @@ export default function CheckoutPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Checkout</h1>
-      <Card className="max-w-md mx-auto mb-8">
+      <Card className="max-w-md mx-auto mb-8 border border-gray-300">
         <CardHeader>
           <CardTitle className="text-xl font-bold">Order Summary</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-4">
             {items.map((item, key) => (
-              <li key={key} className="flex flex-col gap-2 border-b pb-2">
+              <li key={key} className="flex flex-col gap-2 border-b border-gray-300 pb-2">
                 <div className="flex justify-between">
                   <span className="font-medium"> {item.name}</span>
                   <span className="font-semi-bold"> ₦{((item.price * item.quantity) / 100).toFixed(2)}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button  
-                  variant="outline"
+                  <Button 
+                  className="border border-gray-300" 
                   size="sm" 
                   onClick={() => removeItem(item.id)}>-</Button>
 
                     <span className="text-lg font-semibold">{item.quantity}</span>
 
-                    <Button className="bg-black text-white" onClick={() => addItem( {...item, quantity: 1})}>+</Button>
+                    <Button className="border border-gray-300" size="sm" onClick={() => addItem( {...item, quantity: 1})}>+</Button>
                 </div>
               </li>
             ))}
           </ul>
-          <div className="mt-4 border-t pt-2 text-lg font-semibold" >Total: ₦{(total / 100).toFixed(2)}</div>
+          <div className="mt-4 border-t border-gray-300 pt-2 text-lg font-semibold" >Total: ₦{(total / 100).toFixed(2)}</div>
         </CardContent>
       </Card>
       <form action={checkoutAction}  className="max-w-md mx-auto">

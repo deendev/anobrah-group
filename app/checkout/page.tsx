@@ -18,7 +18,7 @@ export default function CheckoutPage() {
         <ShoppingCart className="w-24 h-24 text-gray-400 mb-6" />
         <h1 className="text-3xl font-extrabold mb-2">Your Cart is Empty</h1>
         <p className="text-gray-500 dark:text-gray-400 text-lg">
-          Looks like you haven't added anything yet.
+          Looks like you haven&rsquo;t added anything yet.
         </p>
       </div>
     );

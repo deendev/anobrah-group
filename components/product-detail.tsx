@@ -74,7 +74,7 @@ export const ProductDetails = ({ product }: Props) => {
               </Button>
             </div>
             <Button
-    className="mt-4 md:mt-6 w-full py-4 md:py-6 text-base md:text-lg bg-black text-white hover:bg-gray-800"
+    className="mt-4 md:mt-10 w-full py-4 md:py-6 text-base md:text-lg bg-black text-white hover:bg-gray-800"
     onClick={onAddItem}
 >
     Add to Cart

@@ -15,7 +15,7 @@ export default function CheckoutPage() {
   if (total === 0 || items.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen ">
-        <ShoppingCart className="w-24 h-24 text-gray-400 mb-6" />
+        <ShoppingCart className="w-24 h-24 text-gray-400 mb-4" />
         <h1 className="text-3xl font-extrabold mb-2">Your Cart is Empty</h1>
         <p className="text-gray-500 dark:text-gray-400 text-lg">
           Looks like you haven&rsquo;t added anything yet.
@@ -27,7 +27,7 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen   py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center mb-10 tracking-tight">
+        <h1 className="text-4xl font-extrabold text-center mb-7 tracking-tight">
           Checkout
         </h1>
         <Card className="bg-white  rounded-xl shadow-lg border-none">

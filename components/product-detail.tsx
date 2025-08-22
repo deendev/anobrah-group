@@ -26,10 +26,10 @@ export const ProductDetails = ({ product }: Props) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
-      <Card className="flex flex-col md:flex-row gap-8 items-center p-6 md:p-10 rounded-2xl shadow-xl border border-gray-200">
+    <div className="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
+      <Card className="flex flex-col md:flex-row gap-6 md:gap-8 p-4 md:p-8 rounded-2xl shadow-xl border border-gray-100">
         {product.images && product.images[0] && (
-          <div className="relative h-90 w-full md:w-1/2 rounded-xl overflow-hidden ">
+          <div className="relative h-64 md:h-96 w-full md:w-1/2 rounded-xl overflow-hidden ">
             <Image
               alt={product.name}
               src={product.images[0]}
@@ -39,20 +39,20 @@ export const ProductDetails = ({ product }: Props) => {
             />
           </div>
         )}
-        <div className="md:w-1/2">
-          <CardHeader className="p-0 mb-4">
-            <CardTitle className="text-4xl font-extrabold tracking-tight text-gray-900">
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          <CardHeader className="p-0 mb-2 md:mb-4">
+            <CardTitle className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
               {product.name}
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             {product.description && (
-              <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
                 {product.description}
               </p>
             )}
             {price && price.unit_amount && (
-              <p className="text-3xl font-bold text-gray-900 mb-6">
+              <p className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
                 ₦{((price.unit_amount ?? 0) / 100).toFixed(2)}
               </p>
             )}
@@ -61,19 +61,19 @@ export const ProductDetails = ({ product }: Props) => {
               <Button
                 variant="outline"
                 onClick={() => removeItem(product.id)}
-                className="w-10 h-10 rounded-full text-lg"
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full text-lg"
               >
                 -
               </Button>
-              <span className="text-xl font-bold w-8 text-center">{quantity}</span>
+              <span className="text-lg font-bold w-6 md:w-8 text-center">{quantity}</span>
               <Button
-                className="bg-black text-white w-10 h-10 rounded-full text-lg"
+                className="bg-black text-white w-8 h-8 md:w-10 md:h-10 rounded-full text-lg"
                 onClick={onAddItem}
               >
                 +
               </Button>
             </div>
-            <Button className="mt-6 w-full py-6 text-lg bg-black text-white hover:bg-gray-800">
+            <Button className="mt-4 md:mt-6 w-full py-4 md:py-6 text-base md:text-lg bg-black text-white hover:bg-gray-800">
               Add to Cart
             </Button>
           </CardContent>

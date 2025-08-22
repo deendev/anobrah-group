@@ -16,7 +16,7 @@ export const ProductCard = ({ product }: Props) => {
       href={`/products/${product.id}`}
       className="block h-full transform transition-transform duration-300 hover:-translate-y-1 md:hover:-translate-y-2 max-w-sm mx-auto"
     >
-      <Card className="group h-full flex flex-col  rounded-xl transition-shadow duration-300 hover:shadow-2xl border border-gray-200">
+      <Card className="group h-full flex flex-col  rounded-xl transition-shadow duration-300 hover:shadow-2xl border-none">
         {product.images && product.images[0] && (
           <div className="relative h-60 w-full overflow-hidden">
             <Image

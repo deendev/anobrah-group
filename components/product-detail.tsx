@@ -27,7 +27,7 @@ export const ProductDetails = ({ product }: Props) => {
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
-      <Card className="flex flex-col md:flex-row gap-6 md:gap-8 p-4 md:p-8 rounded-2xl shadow-xl border border-gray-100">
+      <Card className="flex flex-col md:flex-row gap-6 md:gap-8 p-4 md:p-8 border-none">
         {product.images && product.images[0] && (
           <div className="relative h-64 md:h-96 w-full md:w-1/2 rounded-xl overflow-hidden ">
             <Image
